@@ -46,12 +46,14 @@ export interface LoginResponse {
   lastName: string;
   gender: 'male' | 'female';
   image: string;
-  token: string;
+  accessToken: string;
+  refreshToken: string;
 }
 
 export interface LoginCredentials {
   username: string;
   password: string;
+  expiresInMins?: number;
 }
 
 export interface UsersResponse {

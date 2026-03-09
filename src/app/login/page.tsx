@@ -24,7 +24,7 @@ export default function LoginPage() {
 
     try {
       const response = await apiClient.login(credentials);
-      login(response, response.token);
+      login(response, response.accessToken);
       router.push('/dashboard');
     } catch (err) {
       setError('Invalid credentials. Try username: "noahh", password: "noahhpass"');
@@ -90,7 +90,7 @@ export default function LoginPage() {
 
           <div className="mt-6 text-center">
             <p className="text-xs text-muted-foreground">
-              Demo credentials: noah / noahhpass
+              Demo credentials: noahh / noahhpass
             </p>
           </div>
         </div>
