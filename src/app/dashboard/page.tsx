@@ -14,7 +14,7 @@ const fetcher = (token: string) => () => apiClient.getUsers(token);
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { token, logout} = useAuth();
+  const { user, token, logout} = useAuth();
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -57,14 +57,14 @@ export default function DashboardPage() {
       <header className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-xl font-semibold text-foreground">Dashboard</h1>
+            <h1 className="text-xl font-semibold text-foreground">Super Dummy Dashboard For Your Tired Eyes</h1>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-muted-foreground">
-                Welcome back
+                Welcome back {user?.firstName}
               </span>
               <button
                 onClick={logout}
-                className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors text-sm"
+                className="bg-red-700 text-primary-foreground px-4 py-2 rounded-md hover:bg-red-900 transition-colors text-sm"
               >
                 Logout
               </button>

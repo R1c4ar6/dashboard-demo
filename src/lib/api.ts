@@ -1,6 +1,6 @@
 import { LoginCredentials, LoginResponse, UsersResponse, User } from '@/types';
 
-const API_BASE = 'https://dummyjson.com/user';
+const API_BASE = 'https://dummyjson.com/auth';
 
 export const apiClient = {
   async login(credentials: LoginCredentials): Promise<LoginResponse> {
@@ -16,14 +16,13 @@ export const apiClient = {
       throw new Error('Login failed');
     }
 
-    console.log(response.json);
     return response.json();
   },
 
   async getUsers(token: string): Promise<UsersResponse> {
-    const response = await fetch(`${API_BASE}`, {
+    const response = await fetch(`${API_BASE}/users`, {
       headers: {
-        'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
 
@@ -35,9 +34,9 @@ export const apiClient = {
   },
 
   async getUserById(id: number, token: string): Promise<User> {
-    const response = await fetch(`${API_BASE}/${id}`, {
+    const response = await fetch(`${API_BASE}/users/${id}`, {
       headers: {
-        'Authorization': `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
 
