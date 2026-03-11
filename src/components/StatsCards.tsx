@@ -50,7 +50,7 @@ export function StatsCards({ users }: StatsCardsProps) {
               <p className="text-xs text-muted-foreground mt-1">{stat.description}</p>
             </div>
             <div className="bg-primary/10 p-3 rounded-lg">
-              <div className="w-6 h-6 bg-primary rounded"></div>
+              <div className="w-6 h-6 bg-amber-50 rounded animate-pulse"></div>
             </div>
           </div>
         </div>
