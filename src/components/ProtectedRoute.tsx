@@ -12,7 +12,7 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
         if (!token) {
             setTimeout(() => {
                 router.push('/login');
-            }, 3000); // Delay of 2 seconds
+            }, 2000); // 2 seconds delay 
         }
     }, [token, router]);
 

@@ -27,11 +27,11 @@ export function DashboardContent() {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center">
-                    <h1 className="text-xl font-semibold text-foreground mb-2">Error loading data</h1>
-                    <p className="text-muted-foreground mb-4">Please try again later</p>
+                    <h1 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Error loading data</h1>
+                    <p className="text-muted-foreground mb-4 text-sm sm:text-base">Please try again later</p>
                     <button
                         onClick={logout}
-                        className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
+                        className="bg-primary text-primary-foreground px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-primary/90 transition-colors text-xs sm:text-sm"
                     >
                         Logout
                     </button>
@@ -56,15 +56,15 @@ export function DashboardContent() {
         <div className="min-h-screen bg-background">
             <header className="bg-card border-b border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        <h1 className="text-xl font-semibold text-foreground">Super Dummy Dashboard For Your Tired Eyes</h1>
-                        <div className="flex items-center space-x-4">
-                            <span className="text-sm text-muted-foreground">
+                    <div className="flex justify-between items-center h-12 sm:h-16">
+                        <h1 className="font-semibold text-base sm:text-lg">Dummy Dashboard For Your Tired Eyes</h1>
+                        <div className="flex items-center space-x-2 sm:space-x-4">
+                            <span className="text-xs sm:text-sm text-muted-foreground">
                                 Welcome back {user?.firstName}
                             </span>
                             <button
                                 onClick={logout}
-                                className="bg-red-700 text-primary-foreground px-4 py-2 rounded-md hover:bg-red-900 transition-colors text-sm"
+                                className="bg-red-700 text-primary-foreground px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-red-900 transition-colors text-xs sm:text-sm"
                             >
                                 Logout
                             </button>
@@ -73,11 +73,11 @@ export function DashboardContent() {
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                 {isLoading ? (
                     <div className="text-center py-12">
-                        <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-                        <p className="text-muted-foreground mt-4">Loading dashboard...</p>
+                        <div className="inline-block animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-primary"></div>
+                        <p className="text-muted-foreground mt-3 text-sm sm:text-base">Loading dashboard...</p>
                     </div>
                 ) : (
                     <>

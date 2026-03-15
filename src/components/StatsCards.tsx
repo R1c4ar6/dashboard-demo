@@ -37,20 +37,20 @@ export function StatsCards({ users }: StatsCardsProps) {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="bg-card border border-border rounded-lg p-6 shadow-sm"
+          className="bg-card border border-border rounded-lg p-4 sm:p-6 shadow-sm"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
-              <p className="text-2xl font-bold text-foreground mt-2">{stat.value}</p>
-              <p className="text-xs text-muted-foreground mt-1">{stat.description}</p>
+              <p className="text-xs sm:text-sm font-medium text-muted-foreground">{stat.title}</p>
+              <p className="text-xl sm:text-2xl font-bold text-foreground mt-2">{stat.value}</p>
+              <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">{stat.description}</p>
             </div>
-            <div className="bg-primary/10 p-3 rounded-lg">
-              <div className="w-6 h-6 bg-amber-50 rounded animate-pulse"></div>
+            <div className="bg-primary/10 p-2 sm:p-3 rounded-lg">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-amber-50 rounded animate-pulse"></div>
             </div>
           </div>
         </div>
